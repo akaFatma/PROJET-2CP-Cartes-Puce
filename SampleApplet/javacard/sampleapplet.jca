@@ -1,0 +1,1074 @@
+// converted by version 1.3
+// on Tue May 14 15:12:06 WAT 2024
+
+.package jsr268gp/sampleapplet {
+	.aid 0xA0:0x0:0x0:0x0:0x4:0x0:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.0;		//javacard/framework
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x2 1.2;		//javacard/security
+		0xA0:0x0:0x0:0x0:0x62:0x2:0x1 1.1;		//javacardx/crypto
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+	}
+
+	.applet {
+		0xA0:0x0:0x0:0x0:0x4:0x0:0x2 SampleTestApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef short SampleTestApplet/SW_VERIFICATION_FAILED;
+		// 1
+		instanceFieldRef short SampleTestApplet/SW_PIN_VERIFICATION_REQUIRED;
+		// 2
+		instanceFieldRef byte[] SampleTestApplet/ID;
+		// 3
+		instanceFieldRef byte[] SampleTestApplet/n;
+		// 4
+		instanceFieldRef byte[] SampleTestApplet/N;
+		// 5
+		instanceFieldRef byte[] SampleTestApplet/A;
+		// 6
+		instanceFieldRef byte[] SampleTestApplet/hashArray;
+		// 7
+		instanceFieldRef short SampleTestApplet/offset;
+		// 8
+		instanceFieldRef 1.14 SampleTestApplet/random;
+		// 9
+		instanceFieldRef 1.11 SampleTestApplet/digest;
+		// 10
+		instanceFieldRef 1.9 SampleTestApplet/clientPublicKey;
+		// 11
+		instanceFieldRef 1.20 SampleTestApplet/sessionKey;
+		// 12
+		instanceFieldRef 0.9 SampleTestApplet/PIN;
+		// 13
+		instanceFieldRef 1.8 SampleTestApplet/cardPrivateKey;
+		// 14
+		instanceFieldRef byte[] SampleTestApplet/generatedArray;
+		// 15
+		instanceFieldRef byte[] SampleTestApplet/array;
+		// 16
+		instanceFieldRef byte[] SampleTestApplet/array2;
+		// 17
+		instanceFieldRef 2.1 SampleTestApplet/cipher;
+		// 18
+		instanceFieldRef byte[] SampleTestApplet/hashArray2;
+		// 19
+		staticMethodRef 0.9.0(BB)V;		// javacard/framework/OwnerPIN.<init>(BB)V
+		// 20
+		staticMethodRef 1.14.0(B)Ljavacard/security/RandomData;;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+			.descriptor	Ljavacard/security/RandomData;	1.14;
+
+		// 21
+		classRef 1.8;		// javacard/security/RSAPrivateKey
+		// 22
+		staticMethodRef 1.13.0(BSZ)Ljavacard/security/Key;;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 23
+		classRef SampleTestApplet;
+		// 24
+		staticMethodRef SampleTestApplet/<init>()V;
+		// 25
+		virtualMethodRef 0.3.1()V;		// register()V
+		// 26
+		virtualMethodRef 0.3.3()Z;		// selectingApplet()Z
+		// 27
+		virtualMethodRef 0.10.1()[B;		// getBuffer()[B
+		// 28
+		staticMethodRef 0.8.13(SB)[B;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+		// 29
+		classRef 1.9;		// javacard/security/RSAPublicKey
+		// 30
+		virtualMethodRef 0.10.6()S;		// setIncomingAndReceive()S
+		// 31
+		staticMethodRef 0.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 32
+		virtualMethodRef SampleTestApplet/getData([B[BSS)V;
+		// 33
+		virtualMethodRef 0.9.8([BSB)V;		// update([BSB)V
+		// 34
+		staticMethodRef 0.16.2([BS[BSS)S;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+		// 35
+		virtualMethodRef 0.10.8(SS)V;		// setOutgoingAndSend(SS)V
+		// 36
+		virtualMethodRef SampleTestApplet/Generer_n([B)[B;
+		// 37
+		virtualMethodRef SampleTestApplet/RSA_mod_pow([B[B[B)[B;
+		// 38
+		staticMethodRef SampleTestApplet/Mask(Ljavacard/security/MessageDigest;[BSSS)[B;
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+		// 39
+		staticMethodRef SampleTestApplet/concatenateArrays([B[B)[B;
+		// 40
+		virtualMethodRef SampleTestApplet/hash([B[B)V;
+		// 41
+		classRef 1.20;		// javacard/security/AESKey
+		// 42
+		virtualMethodRef SampleTestApplet/sign()V;
+		// 43
+		virtualMethodRef SampleTestApplet/verify()V;
+		// 44
+		virtualMethodRef 0.9.4()Z;		// isValidated()Z
+		// 45
+		virtualMethodRef 0.9.1([BSB)Z;		// check([BSB)Z
+		// 46
+		virtualMethodRef 0.9.2()B;		// getTriesRemaining()B
+		// 47
+		staticMethodRef 0.7.1(S)V;		// javacard/framework/ISOException.throwIt(S)V
+		// 48
+		virtualMethodRef 1.14.1([BSS)V;		// generateData([BSS)V
+		// 49
+		staticMethodRef SampleTestApplet/compareArrays([B[B)S;
+		// 50
+		staticMethodRef 2.1.0(BZ)Ljavacardx/crypto/Cipher;;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+			.descriptor	Ljavacardx/crypto/Cipher;	2.1;
+
+		// 51
+		staticMethodRef 1.11.0(BZ)Ljavacard/security/MessageDigest;;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+		// 52
+		virtualMethodRef 2.1.3(Ljavacard/security/Key;B)V;		// init(Ljavacard/security/Key;B)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 53
+		virtualMethodRef 2.1.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 54
+		virtualMethodRef 1.11.3()B;		// getLength()B
+		// 55
+		virtualMethodRef 1.11.4()V;		// reset()V
+		// 56
+		virtualMethodRef 1.11.5([BSS)V;		// update([BSS)V
+		// 57
+		virtualMethodRef 1.11.1([BSS[BS)S;		// doFinal([BSS[BS)S
+		// 58
+		virtualMethodRef 2.1.4(Ljavacard/security/Key;B[BSS)V;		// init(Ljavacard/security/Key;B[BSS)V
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 59
+		virtualMethodRef SampleTestApplet/Asym(Ljavacard/security/Key;B[B[B)V;
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+		// 60
+		virtualMethodRef SampleTestApplet/Sym(B[B[B)V;
+		// 61
+		classRef 0.9;		// javacard/framework/OwnerPIN
+	}
+
+	.class public SampleTestApplet 0 extends 0.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			 1.8 cardPrivateKey 0;		// Ljavacard/security/RSAPrivateKey;
+			 0.9 PIN 1;		// Ljavacard/framework/OwnerPIN;
+			 byte[] ID 2;		// [B
+			 byte[] n 3;		// [B
+			 byte[] N 4;		// [B
+			 byte[] A 5;		// [B
+			 1.9 clientPublicKey 6;		// Ljavacard/security/RSAPublicKey;
+			 1.20 sessionKey 7;		// Ljavacard/security/AESKey;
+			 1.11 digest 8;		// Ljavacard/security/MessageDigest;
+			 1.14 random 9;		// Ljavacard/security/RandomData;
+			 2.1 cipher 10;		// Ljavacardx/crypto/Cipher;
+			 byte[] generatedArray 11;		// [B
+			 byte[] array 12;		// [B
+			 byte[] array2 13;		// [B
+			 byte[] hashArray2 14;		// [B
+			 byte[] hashArray 15;		// [B
+			final short SW_VERIFICATION_FAILED 16;		// S
+			final short SW_PIN_VERIFICATION_REQUIRED 17;		// S
+			 short offset 18;		// S
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+			getData([B[BSS)V;
+			Generer_n([B)[B;
+			RSA_mod_pow([B[B[B)[B;
+			Sym(B[B[B)V;
+			Asym(Ljavacard/security/Key;B[B[B)V;
+			sign()V;
+			verify()V;
+			hash([B[B)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 31;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					sspush 25344;
+					putfield_s 0;		// short jsr268gp/sampleapplet/SampleTestApplet.SW_VERIFICATION_FAILED
+					aload_0;
+					sspush 25345;
+					putfield_s 1;		// short jsr268gp/sampleapplet/SampleTestApplet.SW_PIN_VERIFICATION_REQUIRED
+					aload_0;
+					sconst_4;
+					newarray 11;
+					putfield_a 2;		// reference jsr268gp/sampleapplet/SampleTestApplet.ID
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 3;		// reference jsr268gp/sampleapplet/SampleTestApplet.n
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					aload_0;
+					sspush 128;
+					newarray 11;
+					putfield_a 5;		// reference jsr268gp/sampleapplet/SampleTestApplet.A
+					aload_0;
+					bspush 32;
+					newarray 11;
+					putfield_a 6;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray
+					aload_0;
+					sconst_0;
+					putfield_s 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_0;
+					sconst_2;
+					invokestatic 20;		// javacard/security/RandomData.getInstance(B)Ljavacard/security/RandomData;
+					putfield_a 8;		// reference jsr268gp/sampleapplet/SampleTestApplet.random
+					aload_0;
+					sconst_4;
+					sconst_0;
+					invokestatic 51;		// javacard/security/MessageDigest.getInstance(BZ)Ljavacard/security/MessageDigest;
+					putfield_a 9;		// reference jsr268gp/sampleapplet/SampleTestApplet.digest
+					aload_0;
+					sconst_4;
+					sspush 1024;
+					sconst_0;
+					invokestatic 22;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 29;		// T_CLASSORINTERFACE javacard/security/RSAPublicKey
+					putfield_a 10;		// reference jsr268gp/sampleapplet/SampleTestApplet.clientPublicKey
+					aload_0;
+					bspush 15;
+					sspush 128;
+					sconst_0;
+					invokestatic 22;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 41;		// T_CLASSORINTERFACE javacard/security/AESKey
+					putfield_a 11;		// reference jsr268gp/sampleapplet/SampleTestApplet.sessionKey
+					aload_0;
+					new 61;		// javacard/framework/OwnerPIN
+					dup;
+					sconst_3;
+					sconst_2;
+					invokespecial 19;		// javacard/framework/OwnerPIN.<init>(BB)V
+					putfield_a 12;		// reference jsr268gp/sampleapplet/SampleTestApplet.PIN
+					aload_0;
+					sconst_5;
+					sspush 1024;
+					sconst_0;
+					invokestatic 22;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 21;		// T_CLASSORINTERFACE javacard/security/RSAPrivateKey
+					putfield_a 13;		// reference jsr268gp/sampleapplet/SampleTestApplet.cardPrivateKey
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 23;		// jsr268gp/sampleapplet/SampleTestApplet
+					dup;
+					invokespecial 24;		// jsr268gp/sampleapplet/SampleTestApplet.<init>()V
+					invokevirtual 25;		// register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 6;
+			.locals 3;
+
+			.descriptor	Ljavacard/framework/APDU;	0.10;
+
+				L0:	aload_0;
+					invokevirtual 26;		// selectingApplet()Z
+					ifeq L2;
+				L1:	return;
+				L2:	aload_1;
+					invokevirtual 27;		// getBuffer()[B
+					astore_2;
+					aload_2;
+					sconst_3;
+					baload;
+					sstore_3;
+					sload_3;
+					ifge L4;
+				L3:	sspush 128;
+					sstore_3;
+				L4:	aload_0;
+					sload_3;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					aload_2;
+					sconst_2;
+					baload;
+					stableswitch L30 1 3 L5 L11 L20;
+				L5:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L10 1 4 L6 L7 L8 L9;
+				L6:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 13;		// reference jsr268gp/sampleapplet/SampleTestApplet.cardPrivateKey
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					invokeinterface 4 21 7;		// javacard/security/RSAPrivateKey
+					goto L10;
+				L7:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 13;		// reference jsr268gp/sampleapplet/SampleTestApplet.cardPrivateKey
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					invokeinterface 4 21 6;		// javacard/security/RSAPrivateKey
+					goto L10;
+				L8:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sload 4;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 12;		// reference jsr268gp/sampleapplet/SampleTestApplet.PIN
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					s2b;
+					invokevirtual 33;		// update([BSB)V
+					goto L10;
+				L9:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					getfield_a_this 2;		// reference jsr268gp/sampleapplet/SampleTestApplet.ID
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+				L10:	getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokestatic 34;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 35;		// setOutgoingAndSend(SS)V
+					goto_w L30;
+				L11:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L19 1 7 L12 L13 L14 L15 L16 L17 L18;
+				L12:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 10;		// reference jsr268gp/sampleapplet/SampleTestApplet.clientPublicKey
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					invokeinterface 4 29 7;		// javacard/security/RSAPublicKey
+					goto_w L19;
+				L13:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sload 4;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 10;		// reference jsr268gp/sampleapplet/SampleTestApplet.clientPublicKey
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					invokeinterface 4 29 6;		// javacard/security/RSAPublicKey
+					goto_w L19;
+				L14:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					getfield_a_this 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					goto_w L19;
+				L15:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					getfield_a_this 5;		// reference jsr268gp/sampleapplet/SampleTestApplet.A
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					goto_w L19;
+				L16:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sload 4;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					aload_0;
+					aload_0;
+					getfield_a_this 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					invokevirtual 36;		// Generer_n([B)[B
+					putfield_a 3;		// reference jsr268gp/sampleapplet/SampleTestApplet.n
+					getfield_a_this 11;		// reference jsr268gp/sampleapplet/SampleTestApplet.sessionKey
+					getfield_a_this 9;		// reference jsr268gp/sampleapplet/SampleTestApplet.digest
+					aload_0;
+					getfield_a_this 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_a_this 3;		// reference jsr268gp/sampleapplet/SampleTestApplet.n
+					invokevirtual 37;		// RSA_mod_pow([B[B[B)[B
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sspush 128;
+					bspush 16;
+					invokestatic 38;		// jsr268gp/sampleapplet/SampleTestApplet.Mask(Ljavacard/security/MessageDigest;[BSSS)[B
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokeinterface 3 41 4;		// javacard/security/AESKey
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					getfield_a_this 5;		// reference jsr268gp/sampleapplet/SampleTestApplet.A
+					getfield_a_this 3;		// reference jsr268gp/sampleapplet/SampleTestApplet.n
+					invokevirtual 37;		// RSA_mod_pow([B[B[B)[B
+					invokestatic 39;		// jsr268gp/sampleapplet/SampleTestApplet.concatenateArrays([B[B)[B
+					getfield_a_this 6;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray
+					invokevirtual 40;		// hash([B[B)V
+					aload_0;
+					getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					aload_0;
+					getfield_a_this 4;		// reference jsr268gp/sampleapplet/SampleTestApplet.N
+					getfield_a_this 5;		// reference jsr268gp/sampleapplet/SampleTestApplet.A
+					getfield_a_this 3;		// reference jsr268gp/sampleapplet/SampleTestApplet.n
+					invokevirtual 37;		// RSA_mod_pow([B[B[B)[B
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 32;		// getData([B[BSS)V
+					goto L19;
+				L17:	aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					aload_0;
+					invokevirtual 42;		// sign()V
+					aload_0;
+					getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_a_this 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 32;		// getData([B[BSS)V
+					goto L19;
+				L18:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					aload_0;
+					invokevirtual 43;		// verify()V
+				L19:	getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokestatic 34;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 35;		// setOutgoingAndSend(SS)V
+					goto_w L30;
+				L20:	aload_2;
+					sconst_1;
+					baload;
+					stableswitch L29 1 3 L21 L27 L28;
+				L21:	getfield_a_this 12;		// reference jsr268gp/sampleapplet/SampleTestApplet.PIN
+					invokevirtual 44;		// isValidated()Z
+					ifeq L23;
+				L22:	return;
+				L23:	aload_1;
+					invokevirtual 30;		// setIncomingAndReceive()S
+					sstore 4;
+					aload_0;
+					sload 4;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_2;
+					sconst_5;
+					sload 4;
+					invokevirtual 32;		// getData([B[BSS)V
+					getfield_a_this 12;		// reference jsr268gp/sampleapplet/SampleTestApplet.PIN
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					s2b;
+					invokevirtual 45;		// check([BSB)Z
+					ifne L29;
+				L24:	getfield_a_this 12;		// reference jsr268gp/sampleapplet/SampleTestApplet.PIN
+					invokevirtual 46;		// getTriesRemaining()B
+					ifne L26;
+				L25:	sspush 25344;
+					invokestatic 47;		// javacard/framework/ISOException.throwIt(S)V
+					goto L29;
+				L26:	sspush 25345;
+					invokestatic 47;		// javacard/framework/ISOException.throwIt(S)V
+					goto L29;
+				L27:	aload_0;
+					getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_a_this 2;		// reference jsr268gp/sampleapplet/SampleTestApplet.ID
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 32;		// getData([B[BSS)V
+					goto L29;
+				L28:	getfield_a_this 11;		// reference jsr268gp/sampleapplet/SampleTestApplet.sessionKey
+					getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokeinterface 3 41 5;		// javacard/security/AESKey
+					pop;
+				L29:	getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokestatic 34;		// javacard/framework/Util.arrayCopyNonAtomic([BS[BSS)S
+					pop;
+					aload_1;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload_3;
+					invokevirtual 35;		// setOutgoingAndSend(SS)V
+				L30:	return;
+		}
+
+		.method public getData([B[BSS)V 8 {
+			.stack 5;
+			.locals 1;
+
+				L0:	sconst_0;
+					sstore 5;
+					goto L2;
+				L1:	aload_1;
+					sload 5;
+					aload_2;
+					sload_3;
+					sload 5;
+					sadd;
+					baload;
+					bastore;
+					sinc 5 1;
+				L2:	sload 5;
+					sload 4;
+					if_scmplt L1;
+				L3:	return;
+		}
+
+		.method public static compareArrays([B[B)S 1 {
+			.stack 3;
+			.locals 1;
+
+				L0:	aload_0;
+					arraylength;
+					aload_1;
+					arraylength;
+					if_scmpeq L5;
+				L1:	aload_0;
+					arraylength;
+					aload_1;
+					arraylength;
+					if_scmple L3;
+				L2:	sconst_m1;
+					goto L4;
+				L3:	sconst_1;
+				L4:	sreturn;
+				L5:	sconst_0;
+					sstore_2;
+					goto L12;
+				L6:	aload_0;
+					sload_2;
+					baload;
+					aload_1;
+					sload_2;
+					baload;
+					if_scmpeq L11;
+				L7:	aload_0;
+					sload_2;
+					baload;
+					aload_1;
+					sload_2;
+					baload;
+					if_scmple L9;
+				L8:	sconst_m1;
+					goto L10;
+				L9:	sconst_1;
+				L10:	sreturn;
+				L11:	sinc 2 1;
+				L12:	sload_2;
+					aload_0;
+					arraylength;
+					if_scmplt L6;
+				L13:	sconst_0;
+					sreturn;
+		}
+
+		.method public Generer_n([B)[B 9 {
+			.stack 4;
+			.locals 1;
+
+				L0:	sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					astore_2;
+				L1:	getfield_a_this 8;		// reference jsr268gp/sampleapplet/SampleTestApplet.random
+					aload_2;
+					sconst_0;
+					aload_2;
+					arraylength;
+					invokevirtual 48;		// generateData([BSS)V
+					aload_2;
+					aload_1;
+					invokestatic 49;		// jsr268gp/sampleapplet/SampleTestApplet.compareArrays([B[B)S
+					ifge L1;
+				L2:	aload_2;
+					areturn;
+		}
+
+		.method public RSA_mod_pow([B[B[B)[B 10 {
+			.stack 6;
+			.locals 5;
+
+				L0:	aload_1;
+					arraylength;
+					sstore 4;
+					aload_2;
+					arraylength;
+					sstore 5;
+					aload_3;
+					arraylength;
+					sstore 6;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					astore 7;
+					sconst_5;
+					sspush 1024;
+					sconst_0;
+					invokestatic 22;		// javacard/security/KeyBuilder.buildKey(BSZ)Ljavacard/security/Key;
+					checkcast 0 21;		// T_CLASSORINTERFACE javacard/security/RSAPrivateKey
+					astore 8;
+					aload 8;
+					aload_1;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 4;
+					invokeinterface 4 21 7;		// javacard/security/RSAPrivateKey
+					aload 8;
+					aload_3;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 6;
+					invokeinterface 4 21 6;		// javacard/security/RSAPrivateKey
+					aload_0;
+					bspush 12;
+					sconst_0;
+					invokestatic 50;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					aload 8;
+					sconst_1;
+					invokevirtual 52;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					sload 5;
+					aload 7;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokevirtual 53;		// doFinal([BSS[BS)S
+					pop;
+					aload 7;
+					areturn;
+		}
+
+		.method public static Mask(Ljavacard/security/MessageDigest;[BSSS)[B 2 {
+			.stack 6;
+			.locals 9;
+
+			.descriptor	Ljavacard/security/MessageDigest;	1.11;
+
+				L0:	aload_0;
+					invokevirtual 54;		// getLength()B
+					sstore 5;
+					sload 4;
+					sload 5;
+					sadd;
+					sconst_1;
+					ssub;
+					sload 5;
+					sdiv;
+					sstore 6;
+					sconst_0;
+					sstore 7;
+					sload 5;
+					newarray 11;
+					astore 8;
+					sload 4;
+					newarray 11;
+					astore 9;
+					sconst_0;
+					sstore 10;
+					goto L8;
+				L1:	aload_0;
+					invokevirtual 55;		// reset()V
+					aload_0;
+					aload_1;
+					sload_2;
+					sload_3;
+					invokevirtual 56;		// update([BSS)V
+					aload_0;
+					sconst_4;
+					newarray 11;
+					dup;
+					sconst_3;
+					sload 10;
+					s2b;
+					bastore;
+					sconst_0;
+					sconst_4;
+					aload 8;
+					sconst_0;
+					invokevirtual 57;		// doFinal([BSS[BS)S
+					pop;
+					sload 4;
+					sload 7;
+					ssub;
+					sstore 11;
+					sload 5;
+					sload 11;
+					if_scmple L3;
+				L2:	sload 11;
+					goto L4;
+				L3:	sload 5;
+				L4:	sstore 12;
+					sconst_0;
+					sstore 13;
+					goto L6;
+				L5:	aload 9;
+					sload 7;
+					sload 13;
+					sadd;
+					aload 8;
+					sload 13;
+					baload;
+					bastore;
+					sinc 13 1;
+				L6:	sload 13;
+					sload 12;
+					if_scmplt L5;
+				L7:	sload 7;
+					sload 5;
+					sadd;
+					sstore 7;
+					sinc 10 1;
+				L8:	sload 10;
+					sload 6;
+					if_scmplt L1;
+				L9:	sload 4;
+					newarray 11;
+					astore 10;
+					sconst_0;
+					sstore 11;
+					goto L11;
+				L10:	aload 10;
+					sload 11;
+					aload 9;
+					sload 11;
+					baload;
+					bastore;
+					sinc 11 1;
+				L11:	sload 11;
+					sload 4;
+					if_scmplt L10;
+				L12:	aload 10;
+					areturn;
+		}
+
+		.method public static concatenateArrays([B[B)[B 3 {
+			.stack 4;
+			.locals 2;
+
+				L0:	aload_0;
+					arraylength;
+					aload_1;
+					arraylength;
+					sadd;
+					newarray 11;
+					astore_2;
+					sconst_0;
+					sstore_3;
+					goto L2;
+				L1:	aload_2;
+					sload_3;
+					aload_0;
+					sload_3;
+					baload;
+					bastore;
+					sinc 3 1;
+				L2:	sload_3;
+					aload_0;
+					arraylength;
+					if_scmplt L1;
+				L3:	sconst_0;
+					sstore_3;
+					goto L5;
+				L4:	aload_2;
+					aload_0;
+					arraylength;
+					sload_3;
+					sadd;
+					aload_1;
+					sload_3;
+					baload;
+					bastore;
+					sinc 3 1;
+				L5:	sload_3;
+					aload_1;
+					arraylength;
+					if_scmplt L4;
+				L6:	aload_2;
+					areturn;
+		}
+
+		.method public Sym(B[B[B)V 11 {
+			.stack 6;
+			.locals 1;
+
+				L0:	aload_0;
+					bspush 13;
+					sconst_0;
+					invokestatic 50;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					bspush 16;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					astore 4;
+					getfield_a_this 11;		// reference jsr268gp/sampleapplet/SampleTestApplet.sessionKey
+					aload 4;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokeinterface 3 41 5;		// javacard/security/AESKey
+					pop;
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					getfield_a_this 11;		// reference jsr268gp/sampleapplet/SampleTestApplet.sessionKey
+					sload_1;
+					aload 4;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload 4;
+					arraylength;
+					invokevirtual 58;		// init(Ljavacard/security/Key;B[BSS)V
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_2;
+					arraylength;
+					aload_3;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokevirtual 53;		// doFinal([BSS[BS)S
+					pop;
+					return;
+		}
+
+		.method public Asym(Ljavacard/security/Key;B[B[B)V 12 {
+			.stack 6;
+			.locals 0;
+
+			.descriptor	Ljavacard/security/Key;	1.0;
+
+				L0:	aload_0;
+					bspush 10;
+					sconst_0;
+					invokestatic 50;		// javacardx/crypto/Cipher.getInstance(BZ)Ljavacardx/crypto/Cipher;
+					putfield_a 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					aload_1;
+					sload_2;
+					invokevirtual 52;		// init(Ljavacard/security/Key;B)V
+					getfield_a_this 17;		// reference jsr268gp/sampleapplet/SampleTestApplet.cipher
+					aload_3;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_3;
+					arraylength;
+					aload 4;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokevirtual 53;		// doFinal([BSS[BS)S
+					pop;
+					return;
+		}
+
+		.method public sign()V 13 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					aload_0;
+					getfield_a_this 13;		// reference jsr268gp/sampleapplet/SampleTestApplet.cardPrivateKey
+					sconst_2;
+					getfield_a_this 6;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					invokevirtual 59;		// Asym(Ljavacard/security/Key;B[B[B)V
+					aload_0;
+					sconst_2;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_a_this 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					invokevirtual 60;		// Sym(B[B[B)V
+					return;
+		}
+
+		.method public verify()V 14 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					sspush 128;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					aload_0;
+					bspush 32;
+					sconst_2;
+					invokestatic 28;		// javacard/framework/JCSystem.makeTransientByteArray(SB)[B
+					putfield_a 18;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray2
+					aload_0;
+					sconst_1;
+					getfield_a_this 15;		// reference jsr268gp/sampleapplet/SampleTestApplet.array
+					getfield_a_this 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					invokevirtual 60;		// Sym(B[B[B)V
+					aload_0;
+					getfield_a_this 10;		// reference jsr268gp/sampleapplet/SampleTestApplet.clientPublicKey
+					sconst_1;
+					getfield_a_this 16;		// reference jsr268gp/sampleapplet/SampleTestApplet.array2
+					getfield_a_this 18;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray2
+					invokevirtual 59;		// Asym(Ljavacard/security/Key;B[B[B)V
+					getfield_a_this 14;		// reference jsr268gp/sampleapplet/SampleTestApplet.generatedArray
+					sconst_0;
+					getfield_a_this 6;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray
+					getfield_a_this 18;		// reference jsr268gp/sampleapplet/SampleTestApplet.hashArray2
+					invokestatic 49;		// jsr268gp/sampleapplet/SampleTestApplet.compareArrays([B[B)S
+					ifne L2;
+				L1:	sconst_2;
+					goto L3;
+				L2:	sconst_4;
+				L3:	bastore;
+					return;
+		}
+
+		.method public hash([B[B)V 15 {
+			.stack 6;
+			.locals 0;
+
+				L0:	getfield_a_this 9;		// reference jsr268gp/sampleapplet/SampleTestApplet.digest
+					invokevirtual 55;		// reset()V
+					getfield_a_this 9;		// reference jsr268gp/sampleapplet/SampleTestApplet.digest
+					aload_1;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					aload_1;
+					arraylength;
+					aload_2;
+					getfield_s_this 7;		// short jsr268gp/sampleapplet/SampleTestApplet.offset
+					invokevirtual 57;		// doFinal([BSS[BS)S
+					pop;
+					return;
+		}
+
+	}
+
+}
